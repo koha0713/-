@@ -123,8 +123,8 @@ classDiagram
     
     Application --> Game
     Application ..> Result
-    Game -.-> IUpdatable
-    Game -.-> IDrawable
+    Game --> IUpdatable
+    Game --> IDrawable
 ```
 
 ## 3. メモリ管理統一版 GameObject システム
@@ -199,12 +199,12 @@ classDiagram
         +GetBounds() BoundingBox
     }
     
-    GameObject -.-> IUpdatable
-    GameObject -.-> IDrawable
+    GameObject --> IUpdatable
+    GameObject --> IDrawable
     GameObject *-- Transform
     GameObject o-- Component
-    Component -.-> IUpdatable
-    Component -.-> IDrawable
+    Component --> IUpdatable
+    Component --> IDrawable
     Component <|-- MeshRenderer
 ```
 
@@ -266,7 +266,7 @@ classDiagram
     }
     
     SceneManager --> SceneBase
-    SceneBase -.-> IScene
+    SceneBase --> IScene
     SceneManager --> SceneTransition
 ```
 
